@@ -39,7 +39,7 @@
       .verte__controller
         Slider(
           v-if="enableAlpha"
-          :gradient="[`rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, 0)`, `rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, 1)`]"
+          :gradient="gradient"
           :min="0"
           :max="1"
           :step="0.01"
@@ -185,6 +185,10 @@ export default {
     draggable: {
       type: Boolean,
       default: true
+    },
+    gradient: {
+      type: Array,
+      default: [`rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, 0)`, `rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, 1)`]
     }
   },
   data: () => ({
